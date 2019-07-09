@@ -2,6 +2,7 @@
     <string name="app_name">网格</string>
     <string name="build">党建</string>
     <string name="location">位置</string>
+    <string name="work">工作</string>
     <string name="news">资讯</string>
     <string name="mine">我的</string>
 </resources>
