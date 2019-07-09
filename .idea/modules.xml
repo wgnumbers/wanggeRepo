@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WangGe.iml" filepath="$PROJECT_DIR$/WangGe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common_base/common_base.iml" filepath="$PROJECT_DIR$/common_base/common_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component_build/component_build.iml" filepath="$PROJECT_DIR$/component_build/component_build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component_location/component_location.iml" filepath="$PROJECT_DIR$/component_location/component_location.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component_mine/component_mine.iml" filepath="$PROJECT_DIR$/component_mine/component_mine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component_news/component_news.iml" filepath="$PROJECT_DIR$/component_news/component_news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_share/lib_share.iml" filepath="$PROJECT_DIR$/lib_share/lib_share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxmvp/rxmvp.iml" filepath="$PROJECT_DIR$/rxmvp/rxmvp.iml" />
+    </modules>
+  </component>
+</project>

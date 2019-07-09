@@ -1,0 +1,1 @@
+include ':app', ':common_base', ':component_build', ':component_location', ':component_news', ':component_mine', ':rxmvp', ':lib_share'

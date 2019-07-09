@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wangge.lib_share">
+
+    <application>
+
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+    </application>
+</manifest>

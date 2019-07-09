@@ -1,0 +1,38 @@
+ext.alwaysLib = true
+apply from: rootProject.file('cc-settings-2.gradle')
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api rootProject.ext.dependencies["appcompat-v7"]
+    api rootProject.ext.dependencies["constraint-layout"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["testRunner"]
+    androidTestImplementation rootProject.ext.dependencies["testEspresso"]
+
+    api rootProject.ext.dependencies["annotations"]
+    api rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+}

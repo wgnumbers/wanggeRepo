@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">common_base</string>
+    <string name="persimmions_error">权限请求失败</string>
+</resources>

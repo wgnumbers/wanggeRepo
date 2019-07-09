@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+
+    flavorDimensions "video_dim"
+    productFlavors {
+        develop {
+            dimension "video_dim"
+            buildConfigField "String", "APP_BASE_URL", '"http://svapi.lgh81.cn:8080/rrk-shortvideo-rest/"'
+            buildConfigField "String", "APP_BASE_MESSAGE_URL", '"http://svapi.lgh81.cn:4004/"'//短信登录
+            buildConfigField "String", "APP_BASE_VERCODE_URL", '"http://svapi.lgh81.cn:4003/"'//获取验证码
+            buildConfigField "String", "APP_BASE_NOTIFY_MESSAGE_URL", '"http://192.168.0.129:8007/"'//获取通知消息
+            buildConfigField "String", "APP_BASE_AUTH_URL", '"http://192.168.0.129:4002/"' //用户认证
+//            buildConfigField "String", "APP_BASE_URL", '"http://svapi.lgh81.cn:8080/rrk-shortvideo-rest/"'
+        }
+        product {
+            dimension "video_dim"
+            buildConfigField "String", "APP_BASE_URL", '"http://svapi.lgh81.cn:8080/rrk-shortvideo-rest/"'
+            buildConfigField "String", "APP_BASE_MESSAGE_URL", '"http://svapi.lgh81.cn:4004/"'//短信登录
+            buildConfigField "String", "APP_BASE_VERCODE_URL", '"http://svapi.lgh81.cn:4003/"'//获取验证码
+            buildConfigField "String", "APP_BASE_NOTIFY_MESSAGE_URL", '"http://svapi.lgh81.cn:8007/"'//获取通知消息
+            buildConfigField "String", "APP_BASE_AUTH_URL", '"http://svapi.lgh81.cn:4002/"' //用户认证
+//            buildConfigField "String", "APP_BASE_URL", '"http://svapi.lgh81.cn:8080/rrk-shortvideo-rest/"'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+
+        }
+    }
+    resourcePrefix "record_"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation  rootProject.ext.dependencies["appcompat-v7"]
+    testImplementation rootProject.ext.dependencies["junit"]
+    androidTestImplementation rootProject.ext.dependencies["testRunner"]
+    androidTestImplementation rootProject.ext.dependencies["testEspresso"]
+    implementation project(':common_base')
+    api rootProject.ext.dependencies["retrofit"]
+    api rootProject.ext.dependencies["converter-gson"]
+    api rootProject.ext.dependencies["adapter-rxjava2"]
+    api rootProject.ext.dependencies["converter-scalars"]
+    implementation  rootProject.ext.dependencies["logging-interceptor"]
+
+
+    //临时添加
+    implementation rootProject.ext.dependencies["stetho"]
+    implementation rootProject.ext.dependencies["stetho-okhttp3"]
+}
